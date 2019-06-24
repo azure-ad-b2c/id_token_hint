@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="get" asp-controller="Home">
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2" for="appName">Application name:</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" id="appName" name="appName" value="WoodGrove Groceries" required />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="displayName">User display name:</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" id="displayName" name="displayName" value="Western Miller" required />
+                <span class="text-danger field-validation-valid" data-valmsg-for="displayName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Generate Id token" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@if (ViewData["link"] != null)
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label for="idToken">Id Token:</label>
+            <textarea class="form-control" rows="7" id="idToken">@ViewData["token"]</textarea>
+        </div>
+        <div class="form-group">
+            Link:
+            <a href="@ViewData["link"]">@ViewData["link"]</a>
+        </div>
+    </div>
+}
