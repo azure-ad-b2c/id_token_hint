@@ -26,8 +26,8 @@ namespace IdTokenBuilder
 
             // All parameters send to Azure AD B2C needs to be sent as claims
             IList<System.Security.Claims.Claim> claims = new List<System.Security.Claims.Claim>();
-            claims.Add(new System.Security.Claims.Claim("appName", appName, System.Security.Claims.ClaimValueTypes.String, issuer));
-            claims.Add(new System.Security.Claims.Claim("displayName", displayName, System.Security.Claims.ClaimValueTypes.String, issuer));
+            claims.Add(new System.Security.Claims.Claim("appName", appName, System.Security.Claims.ClaimValueTypes.String, _issuer));
+            claims.Add(new System.Security.Claims.Claim("displayName", displayName, System.Security.Claims.ClaimValueTypes.String, _issuer));
 
             // Note: This key phrase needs to be stored also in Azure B2C Keys for token validation
             var securityKey = Encoding.UTF8.GetBytes(_signingKey);
