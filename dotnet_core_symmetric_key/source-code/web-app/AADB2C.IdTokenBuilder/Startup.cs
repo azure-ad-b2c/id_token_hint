@@ -34,9 +34,11 @@ namespace AADB2C.IdTokenBuilder
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            
+            services.AddMvc(options => options.EnableEndpointRouting = false);
+
             // Sample: Load the app settings section and bind to AppSettingsModel object graph
             services.Configure<AppSettingsModel>(Configuration.GetSection("AppSettings"));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

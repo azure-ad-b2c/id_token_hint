@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
+
 namespace AADB2C.IdTokenBuilder.Controllers
 {
     public class HomeController : Controller
